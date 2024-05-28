@@ -13,12 +13,10 @@
 - Distance metric and K are hyperparameters
     - L1 (Manhattan) distance
     - L2 (Euclidean) distance
-$$
-d_{\text{Manhattan}}(\mathbf{I}_1, \mathbf{I}_2) = \sum_{i=p} |I_i^p - I_2^p|
-$$
-$$
-d_{\text{Euclidean}}(\mathbf{I_1},\mathbf{I_2}) = \sqrt{\sum_{i=p} (I_1^p - I_2^p)^2}
-$$
+  
+$$d_{\text{Manhattan}}(\mathbf{I_1}, \mathbf{I_2}) = \sum_{i=p} |I_i^p - I_2^p|$$
+
+$$d_{\text{Euclidean}}(\mathbf{I_1},\mathbf{I_2}) = \sqrt{\sum_{i=p} (I_1^p - I_2^p)^2}$$
 - Choose hyperparameters using validation set
     - hyperparameters are the choices about the algorithm thant we set rather than learn
     - problem-dependent
