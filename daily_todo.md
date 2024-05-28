@@ -16,6 +16,10 @@ In general, the work is about
 <br>
 
 here is my todo list in 2024/5/27
-- [ ] 1-3pm 200 data
-- [ ] first lecture of cs231n
-- [ ] java homework for week 6
+- [x] 1-3pm 100 data
+- [x] first lecture of cs231n
+- [x] java homework for week 6
+5.28
+- [ ] afternoon 250 data
+- [ ] second lecture of cs231n and learn how to do homework
+- [ ] java 2 lectures of week 7 
