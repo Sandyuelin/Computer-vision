@@ -15,11 +15,15 @@ In general, the work is about
 ```
 <br>
 
-here is my todo list in 2024/5/27
+here is my todo list 
+<br>
+2024/5/27
 - [x] 1-3pm 100 data
 - [x] first lecture of cs231n
 - [x] java homework for week 6
-5.28
+<br>
+2024/5/28
+
 - [ ] afternoon 250 data
 - [ ] second lecture of cs231n and learn how to do homework
 - [ ] java 2 lectures of week 7 
