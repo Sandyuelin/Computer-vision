@@ -15,8 +15,16 @@ In general, the work is about
 ```
 <br>
 
-here is my todo list 
+#### here is my todo list 
+
 <br>
+
+weekly todo:
+- [ ] spend one week to finish and understand assignment 1
+- [ ] week 7 java
+- [ ] processing 500 data
+<br>
+
 2024/5/27
 - [x] 1-3pm 50 data
 - [x] first lecture of cs231n
