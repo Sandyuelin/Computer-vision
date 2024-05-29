@@ -18,12 +18,18 @@ In general, the work is about
 here is my todo list 
 <br>
 2024/5/27
-- [x] 1-3pm 100 data
+- [x] 1-3pm 50 data
 - [x] first lecture of cs231n
 - [x] java homework for week 6
 <br>
 2024/5/28
 
-- [ ] afternoon 250 data
-- [ ] second lecture of cs231n and learn how to do homework
-- [ ] java 2 lectures of week 7 
+- [x] afternoon 100 data
+- [x] second lecture of cs231n
+<br>
+2024/5/29
+
+- [ ] afternoon 100 data
+- [ ] do the kNN homework and **learn** the code
+- [ ] java week 7 lecture
+- [ ] do one homework by urself
