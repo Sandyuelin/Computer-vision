@@ -36,13 +36,13 @@ $$f(x,W) = Wx +b$$
 
 ## Loss function
 - Multiclass SVM loss: 
-$$ \text{Given an example } (x_i,y_i) \text{ where } x_i\text{ is the image and where } y_i \text{is the label, and using shourthand for the scores vector,}$$ 
-$$ s_j(\mathbf{x_i}) = \mathbf{w_j} \cdot \mathbf{x_i} $$
+$$\text{Given an example } (x_i,y_i) \text{ where } x_i\text{ is the image and where } y_i \text{is the label, and using shourthand for the scores vector,}$$ 
+$$s_j(\mathbf{x_i}) = \mathbf{w_j} \cdot \mathbf{x_i}$$
 
-$$ L_i = \sum_{j \neq y_i} \max(0, s_j(\mathbf{x}_i) - s_{y_i}(\mathbf{x}_i) + \Delta)  \;L \in (0, \infty)$$
- $$ \text{delta here is a safe margin, loss over full dataset is average:}$$ 
+$$L_i = \sum_{j \neq y_i} \max(0, s_j(\mathbf{x_i}) - s_{y_i}(\mathbf{x}_i) + \Delta) \,L \in (0, \infty)$$
+ $$\text{delta here is a safe margin, loss over full dataset is average:}$$ 
 
-$$ L = \frac{1}{N} \sum_{i=1}^N L_i$$
+$$L = \frac{1}{N} \sum_{i=1}^N L_i$$
 
 the threshold at zero max(0, -) function is hinge loss, sometimes people using the squared hinge loss SVM (or L2-SVM) which uses the form max(0, -)^2 that penalizes violated margins quadratically instead of linearly
 ```
