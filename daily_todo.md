@@ -36,11 +36,16 @@ weekly todo:
 <br>
 2024/5/29
 
-- [ ] afternoon 100 data
-- [ ] do the kNN homework and **learn** the code
-- [ ] java week 7 lecture
-- [ ] do one homework by urself
+- [x] afternoon 50 data
+- [x] do the kNN homework and **learn** the code
+- [x] java week 7 lecture
+<br>
+2024/5/30
 
+- [x] 50 data
+- [x] svm and softmax
+- [x] alpha-go doc
+- [ ] reading 
 ---
 
 ### what i have done
