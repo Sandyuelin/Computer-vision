@@ -60,3 +60,12 @@ $$R(W) = \sum_{k}\sum_{l}W_{k,l}^2$$
 ```
 All we have to do now is to come up w/ a way to find the weights that minimize the loss
 ```
+
+
+## Softmax classifier (Multiomial logistic regression)
+$$L_i = - log(\frac{e^{s_{y_i}}}{\sum_j e^{s_j} })$$
+steps: 
+- exponentialize the scores
+- normalize probability
+- use logarithm
+
