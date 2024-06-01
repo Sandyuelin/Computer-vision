@@ -45,7 +45,20 @@ weekly todo:
 - [x] 50 data
 - [x] svm and softmax
 - [x] alpha-go doc
-- [ ] reading 
+- [x] reading
+<br>
+2024/5/31
+
+- [x] 60 data
+- [x] do the svm homework 
+<br>
+2024/6/1
+
+- [ ] 60 data
+- [ ] cs231n lecture and try to understand code better
+- [ ] java homework and lectures
+
+
 ---
 
 ### what i have done
