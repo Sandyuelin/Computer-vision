@@ -69,3 +69,15 @@ steps:
 - normalize probability
 - use logarithm
 
+## Optimization
+Goal: find **W** to minimize the loss function
+- numerical gradient
+- analytic gradient
+- gradient check: use numerical one to check analytic one
+
+### Stochastic gradent descent (SGD)
+$$\nabla_W L(W) = \frac{1}{N} \sum_{i=1}^N\nabla_W L_i(x_i,y_i,W)+\lambda \nabla_W R(W)$$
+
+nabla symbol here denotes gradient operator
+- using a minibatch of examples to approximate the actual N
+
