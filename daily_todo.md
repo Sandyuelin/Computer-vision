@@ -18,12 +18,6 @@
 
 <br>
 
-weekly todo:
-- [ ] spend one week to finish and understand assignment 1
-- [ ] week 7 java
-- [ ] processing 500 data
-<br>
-
 2024/5/27
 - [x] 1-3pm 50 data
 - [x] first lecture of cs231n
@@ -54,10 +48,14 @@ weekly todo:
 <br>
 2024/6/1
 
-- [ ] 60 data
-- [ ] cs231n lecture and try to understand code better
-- [ ] java homework and lectures
+- [x] 60 data
+- [x] cs231n lecture and try to understand code better
+- [x] java homework and lectures
+<br>
+2024/6/5
 
+- [ ] week 9
+- [ ] read essay
 
 ---
 
