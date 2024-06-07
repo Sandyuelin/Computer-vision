@@ -75,9 +75,54 @@ Goal: find **W** to minimize the loss function
 - analytic gradient
 - gradient check: use numerical one to check analytic one
 
+
 ### Stochastic gradent descent (SGD)
 $$\nabla_W L(W) = \frac{1}{N} \sum_{i=1}^N\nabla_W L_i(x_i,y_i,W)+\lambda \nabla_W R(W)$$
 
-nabla symbol here denotes gradient operator
-- using a minibatch of examples to approximate the actual N
+(nabla symbol here denotes gradient operator)
+hyperparameters:
+- weight initialization
+- number of steps
+- learning rate
+- batch size
+- data sampling
 
+problems w SGD: 
+- what if the loss function has a local minimum or saddle point
+- gradients come from minibatches so they can be noisy
+<br>
+
+solutions: **SGD+Momentum**
+$$v_{t+1} = \rho v_t +\nabla f(x_t)$$
+$$x_{t+1} = x_t -\alpha v_{t+1}$$
+```
+v = 0
+for t in range(num_steps):
+  dw = compute_gradient(w)
+  v = rho*v +dw
+  w -= learning_rate*v 
+
+```
+rho is friction
+<br>
+
+**Adam: RMSProp + Momentum**
+[Adam](https://arxiv.org/pdf/1412.6980)
+```
+moment1 = 0
+moment2 = 0
+for t in range(num_steps):
+   dw = compute_gradient(w)
+   moment1 = beta1*moment1+ (1-beta1)*dw
+   moment2 = beta2*moment2 + (1-beta2)*dw*dw
+   w -= learning_rate * moment1 / (moment2.sqrt() +1e-7) 
+```
+ Adam with beta1=0.9 beta2=0.999 and learning_rate = 1e-3,5e-4,1e-4 is great starting point for many models
+
+ ## Neural Network
+Image Features:
+- Color Histogram
+-  Histogram of Oriented Gradients(HoG)
+- Bag of Words (create a codebook and envode images)
+
+Multi-Layer Network(MLP) fully connects elements
