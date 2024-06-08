@@ -34,6 +34,13 @@ $$f(x,W) = Wx +b$$
 - linear classifier is the inner product of weights or parameters matrix and pixel column plus bias
 - row of weight matrix represents class
 
+```
+Image Features:
+- Color Histogram
+-  Histogram of Oriented Gradients(HoG)
+- Bag of Words (create a codebook and envode images)****
+```
+
 ## Loss function
 - Multiclass SVM loss: 
 $$\text{Given an example } (x_i,y_i) \text{ where } x_i\text{ is the image and where } y_i \text{is the label, and using shourthand for the scores vector,}$$ 
@@ -120,9 +127,16 @@ for t in range(num_steps):
  Adam with beta1=0.9 beta2=0.999 and learning_rate = 1e-3,5e-4,1e-4 is great starting point for many models
 
  ## Neural Network
-Image Features:
-- Color Histogram
--  Histogram of Oriented Gradients(HoG)
-- Bag of Words (create a codebook and envode images)
-
 Multi-Layer Network(MLP) fully connects elements
+- input layer
+- hidden layer
+- output layer
+- ReLU (default choice) activation function
+    $$ReLU(z) = max(0,z)$$ 
+- Softmax loss function
+
+- **backpropagation** of the error
+$$\frac{\partial L}{\partial w} = \frac{\partial L}{\partial o} \frac{\partial o}{\partial w}$$
+$$\frac{\partial L}{\partial w} = \frac{\partial L}{\partial o} \frac{\partial o}{\partial h} \frac{\partial h}{\partial w}$$
+$$\frac{\partial L}{\partial w} = \frac{\partial L}{\partial o} \frac{\partial o}{\partial h} \frac{\partial h}{\partial o} \frac{\partial o}{\partial w}$$
+
