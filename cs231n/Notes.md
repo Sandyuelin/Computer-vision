@@ -40,13 +40,12 @@ Image Features:
 -  Histogram of Oriented Gradients(HoG)
 - Bag of Words (create a codebook and envode images)****
 ```
-
 ## Loss function
-- Multiclass SVM loss: 
+### Data loss/ Hinge loss
 $$\text{Given an example } (x_i,y_i) \text{ where } x_i\text{ is the image and where } y_i \text{is the label, and using shourthand for the scores vector,}$$ 
 $$s_j(\mathbf{x_i}) = \mathbf{w_j} \cdot \mathbf{x_i}$$
 
-$$L_i = \sum_{j \neq y_i} \max(0, s_j(\mathbf{x_i}) - s_{y_i}(\mathbf{x}_i) + \Delta) \,L \in (0, \infty)$$
+$$L_i = \sum_{j \neq y_i} \max(0, s_j(\mathbf{x_i}) - s_{y_i}(\mathbf{x_i}) + \Delta)  \;L \in (0, \infty)$$
  $$\text{delta here is a safe margin, loss over full dataset is average:}$$ 
 
 $$L = \frac{1}{N} \sum_{i=1}^N L_i$$
@@ -56,14 +55,31 @@ the threshold at zero max(0, -) function is hinge loss, sometimes people using t
 The loss function quantifies our unhappiness w/ predictions on the training set
 ```
 
-## Regularization
+
+### Regularization loss
 extending the loss function w/ a **regularization penalty R(W)** that tells model should be simpler
 - L2 regularization (shown below)
 - L1 regularization
 - elastic net (L1+L2)
 - to be continued
-$$R(W) = \sum_{k}\sum_{l}W_{k,l}^2$$
+$$R(W) = \sum_{k}\sum_{l} W_{k,l}^2$$
 
+### Support Vector Machine (SVM)
+$$L = \frac{1}{N} \sum_{i=1}^N \sum_{j \neq y_i} \max(0, s_j(\mathbf{x_i}) - s_{y_i}(\mathbf{x_i}) + \Delta) + \lambda \sum_{k}\sum_{l} W_{k,l}^2$$
+
+### Computing the gradient
+The gradient of the data loss with respect to $W$ for a given training example $i$ is:
+
+$$\frac{\partial L_i}{\partial W} = 
+\begin{cases} 
+-X_i & \text{if } j = y_i \text{ and } s_j - s_{y_i} + \Delta > 0 \\
+X_i & \text{if } j \neq y_i \text{ and } s_j - s_{y_i} + \Delta > 0 \\
+0 & \text{otherwise}
+\end{cases}$$
+
+The gradient of the regularization loss with respect to $W$ is:
+
+$$\frac{\partial L_{\text{reg}}}{\partial W} = 2 \lambda W$$
 ```
 All we have to do now is to come up w/ a way to find the weights that minimize the loss
 ```
