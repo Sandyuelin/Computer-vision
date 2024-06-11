@@ -1,5 +1,5 @@
 #### In general, the work is about 
-- processing 6000+ data for recognition (labelme)
+- processing 2500+ data for recognition (labelme)
 - learn cs231n (computer vision)
 - read paper on arxiv (personally prefer reading classical papers)
 - listening the meeting
@@ -15,47 +15,10 @@
 ---
 
 ###  my todo list 
-
-<br>
-
-2024/5/27
-- [x] 1-3pm 50 data
-- [x] first lecture of cs231n
-- [x] java homework for week 6
-<br>
-2024/5/28
-
-- [x] afternoon 100 data
-- [x] second lecture of cs231n
-<br>
-2024/5/29
-
-- [x] afternoon 50 data
-- [x] do the kNN homework and **learn** the code
-- [x] java week 7 lecture
-<br>
-2024/5/30
-
-- [x] 50 data
-- [x] svm and softmax
-- [x] alpha-go doc
-- [x] reading
-<br>
-2024/5/31
-
-- [x] 60 data
-- [x] do the svm homework 
-<br>
-2024/6/1
-
-- [x] 60 data
-- [x] cs231n lecture and try to understand code better
-- [x] java homework and lectures
-<br>
-2024/6/5
-
-- [ ] week 9
-- [ ] read essay
+- [ ] 920 data
+- [x] lecture of backpropagation
+- [ ] finish svm, softmax
+- [ ] read one essay with its open source (better understand the flow of the github)
 
 ---
 
@@ -63,6 +26,18 @@
 - technical thing 
     - setup the learning environment using google colab and google drive
     - learn kNN for image classification
+    - learn svm+ gradient code in thorough
+    - use backpropagation to calculate the gradient 
 - awareness
     - take advantage of youtube to find your learning resources 
     - feel truly respectful to people who establish, polish, and pass on the teaching materials. [cs231n website](https://cs231n.stanford.edu/) *if i become peer tutor/ ta one day, i should carry the spirit to deliver the knowledge :D*
+- meeting
+```
+vecFusion 
+img diffusion 做生成seq difussion 矢量化
+S4 block
+Mamba可选择性
+笔端噪声的问题 
+多模态大模型
+
+```
