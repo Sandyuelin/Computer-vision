@@ -6,7 +6,7 @@
 ```
 
 - write in corresponding command in terminal found in [Pytorch website](https://pytorch.org/get-started/locally/)
-- ```
-  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-  ```
+```
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
 
