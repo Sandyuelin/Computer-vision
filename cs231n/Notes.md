@@ -143,6 +143,8 @@ for t in range(num_steps):
  Adam with beta1=0.9 beta2=0.999 and learning_rate = 1e-3,5e-4,1e-4 is great starting point for many models
 
  ## Neural Network
+
+
 Multi-Layer Network(MLP) fully connects elements
 - input layer
 - hidden layer
@@ -150,9 +152,67 @@ Multi-Layer Network(MLP) fully connects elements
 - ReLU (default choice) activation function
     $$ReLU(z) = max(0,z)$$ 
 - Softmax loss function
+<br>
 
-- **backpropagation** of the error
+universal approximation:
+- build a bump function using hidden units
+- use narrower gap between bump and increase bump numbers to increase the fidelity of representation 
+<br>
+
+convex functions
+$$f(t x_1 +(1-t) x2) \leq t f(x_1) + (1-t) f(x_2)$$
+- intuition: a convex function is a bowl
+- easy to optimize since it has theoretical guarantess about converging to global minimum
+<br>
+
+**backpropagation**
+- Forward pass: compute  outputs
+- Backward pass: compute derivatives (use chain rule)
+using chain rule
 $$\frac{\partial L}{\partial w} = \frac{\partial L}{\partial o} \frac{\partial o}{\partial w}$$
 $$\frac{\partial L}{\partial w} = \frac{\partial L}{\partial o} \frac{\partial o}{\partial h} \frac{\partial h}{\partial w}$$
 $$\frac{\partial L}{\partial w} = \frac{\partial L}{\partial o} \frac{\partial o}{\partial h} \frac{\partial h}{\partial o} \frac{\partial o}{\partial w}$$
+downstream gradient = local gradient * upstream gradient
 
+- patterns in gradient flow
+    - add gate: gradient distributor (same)
+    - copy gate: gradient adder 
+    - mul gate: swap muliplier
+    - max gate: gradient router (flow to the max )
+- backprop with vectors
+   - Jacobian vectors
+- backprop with matrices/tensors
+    - local Jacobian matrices
+        - x:[NxD] w: [DxM] by matrix multiply y = xw y:[NxM]
+        - dL/dx = (dL/dy) w^T
+        - [NxD]   [NxM]   [MxD]
+- back: higher-order derivatives: **Hessian matrix**
+    
+## Convolutional networks
+*Fully-connected network flatten the image into vectors*
+- components  
+  - fully-connected layers
+  - Conv + ReLU (Since W2W1 = linear classifier )
+  - pooling layers: 4X4 -> 2X2
+  - normalization
+  ![stdDraw](https://github.com/Sandyuelin/Computer-vision/blob/807f5ae0d990842cd1031beb7630c7a145ca1e39/cs231n/Screenshot%202024-06-12%20151703.png)
+ 
+**Convolutional filters**
+<br>
+
+- what do convolutional filters learn?
+    - first-layer conv filters: local image templates (often learn oriented edges, opposing colors)
+- Same padding: output and input have the same size when P = (K-1)/2
+   - input: W
+   - filter: K
+   - padding: P
+   - output: W-K+1+2P
+- Strided convolution (Downsample)
+   - input
+   - filter
+   - padding
+   - stride: S
+   - output: (W-K+2P)/S+1
+<br>
+
+Classic architecture: **[Conv, ReLU, Pool] x N, flatten, [FC,ReLU] X N, FC**
