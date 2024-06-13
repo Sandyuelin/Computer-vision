@@ -16,7 +16,13 @@
 
 ## Convolutional Neural Networks (CNNs) for Image Recognition
 - **ImageNet Classification with Deep CNNs** - Learn about the breakthroughs in image classification using deep convolutional networks.
-- **Deep Residual Learning for Image Recognition** - Introduces ResNets, which are crucial for computer vision.
+### Deep Residual Learning for Image Recognition
+- a stack of manuy residual blocks: add identical functions after Conv+ReLu+Conv
+<img src="https://github.com/Sandyuelin/Computer-vision/blob/ad4a67f699727f5b1722349a5d0ecdbe5a877bd1/Related_work/Screenshot%202024-06-13%20190303.png" alt="Screenshot" width="400"/>
+
+- basic block: two Conv 3 X 3
+- bottleneck block --> more layers, less computations
+ 
 - **Identity Mappings in Deep Residual Networks** - Explores improvements in ResNet architectures.
 
 ## Attention Mechanisms and Transformers
