@@ -216,3 +216,22 @@ downstream gradient = local gradient * upstream gradient
 <br>
 
 Classic architecture: **[Conv, ReLU, Pool] x N, flatten, [FC,ReLU] X N, FC**
+
+
+## Hardware and software
+
+- CPU: central processing unit
+- GPU: graphics processing unit
+
+|           | Cores                | Clock Speed (GHz)   | Memory        | Price | TFLOP/sec  |
+|-----------|----------------------|---------------------|---------------|-------|------------|
+| **CPU**   |                      |                     |               |       |            |
+| Ryzen 9   | 16                   | 3.5                 | System RAM    | $749  | ~4.8 FP32  |
+| 3950X     | (32 threads with     | (4.7 boost)         |               |       |            |
+|           | hyperthreading)      |                     |               |       |            |
+| **GPU**   |                      |                     |               |       |            |
+| NVIDIA    | 4608                 | 1.35                | 24 GB GDDR6   | $2499 | ~16.3 FP32 |
+| Titan RTX |                      | (1.77 boost)        |               |       |            |
+
+- **CPU**: Fewer cores, but each core is much faster and much more capable; great at sequential tasks.
+- **GPU**: More cores, but each core is much slower and "dumber"; great for parallel tasks.
