@@ -235,3 +235,52 @@ Classic architecture: **[Conv, ReLU, Pool] x N, flatten, [FC,ReLU] X N, FC**
 
 - **CPU**: Fewer cores, but each core is much faster and much more capable; great at sequential tasks.
 - **GPU**: More cores, but each core is much slower and "dumber"; great for parallel tasks.
+
+## Training neural networks
+
+### activation functions
+- signoid 
+   - squashes numbers to range [0,1]
+   - saturated neurons kill the gradients
+   - signmoid outputs are not zero-centered
+   - exp() a bit compute expensive (for CPU)
+- tanh
+   - squashes numbers to range[-1,1]
+   - zero-centered
+   - still kill gradients
+- ReLu
+   - cheap, simple, does not saturate
+   - not zero-centered output: maybe less of a concern
+- Leacky ReLU $f(x)=max(0.01x,x)$
+   - will not die
+- ELU: exponential linear unit 
+<br>
+
+$f(x)=x$  if x > 0 $f(x) = \alpha (exp(x)-1)$ if x <= 0
+- SELU: scaled exponential linear unit
+
+<br> 
+
+**dont think too hard, just use ReLU and dont use sigmoid or tanh**
+<br>
+whats going on: weight initialization(Xaview, Kaiming); regularization(dropout,mixup)
+
+### learning rate decay
+- step
+- cosine
+- linear
+- inverse sqrt
+- constant
+
+## Recurrent neural networks (RNN)
+- process sequences (image captioning, video classification)
+- Vanilla recurrent neural networks
+   - x -> RNN -> y
+   - which consists a single hidden vector **h**
+   $$h_t = f_W (h_{t-1} , x_t)$$
+   $$h_t = tanh(W_{hh} h_{t-1} + W_{xh} x_t + bias)$$
+   $$y_t = W_{hy} h_t$$
+    <img src="https://github.com/Sandyuelin/Computer-vision/blob/90dd3f71d0ab3acf1a6de2103bf2354ab20fa0cc/cs231n/Screenshot%202024-06-17%20202249.png" alt="Screenshot" width="400"/>
+     <img src="https://github.com/Sandyuelin/Computer-vision/blob/90dd3f71d0ab3acf1a6de2103bf2354ab20fa0cc/cs231n/Screenshot%202024-06-17%20202314.png" alt="Screenshot" width="400"/>
+      <img src="https://github.com/Sandyuelin/Computer-vision/blob/90dd3f71d0ab3acf1a6de2103bf2354ab20fa0cc/cs231n/Screenshot%202024-06-17%20202439.png" alt="Screenshot" width="400"/>
+
