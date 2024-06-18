@@ -2,15 +2,18 @@
 
 ### Understanding LSTM Networks
 - LSTMs are capable of keeping long and short memeory
+- share some intuition w/ ResNet
 - algorithm:
-  - forget gate layer: $$f_t = \sigma (W_f \cdot [h_{t-1} , x_t]+ b_f)$$ which outputs numbers between 1(completely keep this) and 0(completely get rid o this) 
-  - input gate layer: $$i_t = \sigma (W_i \cdot [h_{t-1} , x_t]+ b_i)$$ 
-  - cell state update: $$\tilde{C}t = \tanh (W_C \cdot [h{t-1} , x_t]+ b_C)$$ which calculates the new candidate cell state
-  - cell state: $$C_t = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t$$ which updates the cell state
-  - hidden state: $$o_t = \sigma (W_o \cdot [h_{t-1} , x_t]+ b_o)$$
-     $$h_t = o_t \cdot \tanh(C_t)$$ which calculates the new hidden state
+  - **forget gate layer**: $f_t = \sigma (W_f \cdot [h_{t-1} , x_t]+ b_f)$ which outputs numbers between 1(completely keep this) and 0(completely get rid o this) 
+  - **input gate layer**: $i_t = \sigma (W_i \cdot [h_{t-1} , x_t]+ b_i)$
+  - **cell state update**: $\tilde{C}t = \tanh (W_C \cdot [h{t-1} , x_t]+ b_C)$
+  - **cell state**: $C_t = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t$
+  - **hidden state**: $o_t = \sigma (W_o \cdot [h_{t-1} , x_t]+ b_o)$
+     $h_t = o_t \cdot \tanh(C_t)$
 <img src="https://github.com/Sandyuelin/Computer-vision/blob/4499b23094026d20ddaa1243fffe08710902e1f4/Related_work/Screenshot%202024-06-11%20183847.png" alt="Screenshot" width="400"/>
 
+- **uninterrupted gradient flow**: backpropagation from $c_t$ to $c_{t-1}$ only elementwise multiplication by $f_t$
+  
 - **The Unreasonable Effectiveness of RNNs** - Provides a broad perspective on the effectiveness of RNNs.
 - **Recurrent Neural Network Regularization** - Focuses on techniques to regularize RNNs and improve performance.
 
