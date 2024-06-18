@@ -99,7 +99,7 @@ Goal: find **W** to minimize the loss function
 - gradient check: use numerical one to check analytic one
 
 
-### Stochastic gradent descent (SGD)
+## Stochastic gradent descent (SGD)
 $$\nabla_W L(W) = \frac{1}{N} \sum_{i=1}^N\nabla_W L_i(x_i,y_i,W)+\lambda \nabla_W R(W)$$
 
 (nabla symbol here denotes gradient operator)
@@ -142,7 +142,7 @@ for t in range(num_steps):
 ```
  Adam with beta1=0.9 beta2=0.999 and learning_rate = 1e-3,5e-4,1e-4 is great starting point for many models
 
- ## Neural Network
+## Neural Network
 
 
 Multi-Layer Network(MLP) fully connects elements
@@ -283,4 +283,11 @@ whats going on: weight initialization(Xaview, Kaiming); regularization(dropout,m
     <img src="https://github.com/Sandyuelin/Computer-vision/blob/90dd3f71d0ab3acf1a6de2103bf2354ab20fa0cc/cs231n/Screenshot%202024-06-17%20202249.png" alt="Screenshot" width="400"/>
      <img src="https://github.com/Sandyuelin/Computer-vision/blob/90dd3f71d0ab3acf1a6de2103bf2354ab20fa0cc/cs231n/Screenshot%202024-06-17%20202314.png" alt="Screenshot" width="400"/>
       <img src="https://github.com/Sandyuelin/Computer-vision/blob/90dd3f71d0ab3acf1a6de2103bf2354ab20fa0cc/cs231n/Screenshot%202024-06-17%20202439.png" alt="Screenshot" width="400"/>
+- [LSTM explaination](https://github.com/Sandyuelin/Computer-vision/blob/b0d5c08877438f01991eb437884b92eb4dbe96cc/Related_work/ReadingEssays.md)
+
+## Attention
+**attend**
+
+- image captioning w/ RNNs and Attention
+   - each step of decoder use a different context vector that looks at different parts of the input image
 
