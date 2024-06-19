@@ -304,3 +304,6 @@ whats going on: weight initialization(Xaview, Kaiming); regularization(dropout,m
    - Output: $Y= AV$ $Y_i = \sum_j A_{i,j}V_j$
 ![StdDraw](https://github.com/Sandyuelin/Computer-vision/blob/df41b7c508209d23b6437b0c19b4b9d701135252/cs231n/screenshots/Attention_graph.png)
 
+#### Self-attention
+add query matrix which multiply with input vector to compute query vector
+![StdDraw](https://github.com/Sandyuelin/Computer-vision/blob/78c435d8bc60c80a36d299ffeb8f60bfd44e3890/cs231n/screenshots/Screenshot%202024-06-19%20180729.png)
