@@ -286,8 +286,21 @@ whats going on: weight initialization(Xaview, Kaiming); regularization(dropout,m
 - [LSTM explaination](https://github.com/Sandyuelin/Computer-vision/blob/b0d5c08877438f01991eb437884b92eb4dbe96cc/Related_work/ReadingEssays.md)
 
 ## Attention
-**attend**
-
+#### attend
 - image captioning w/ RNNs and Attention
    - each step of decoder use a different context vector that looks at different parts of the input image
+
+#### Attention layer
+- inputs:
+  - Query vectors: Q ($N_Q \times D_Q$) context vector
+  - Input vectors: X ($N_X \times D_X$)
+  - Key matrix: $W_K$ ($D_X \times D_Q$) transform input vectors into key vectors, key vectors will be compared against query vectors to compute attention scores
+  - Value matrix: $W_V$ ($D_X \times D_V$)
+- computation
+   - Key vectors: $K= XW_K$
+   - Value vectors:$V = XW_V$
+   - Similarity (Attention scores): $E = QK^T$  $E_{i,j} = Q_i \cdot K_j / \sqrt(D_Q)$
+   - Attention weights: $A = softmax(E, dim =1)$
+   - Output: $Y= AV$ $Y_i = \sum_j A_{i,j}V_j$
+![StdDraw](https://github.com/Sandyuelin/Computer-vision/blob/df41b7c508209d23b6437b0c19b4b9d701135252/cs231n/screenshots/Attention_graph.png)
 
