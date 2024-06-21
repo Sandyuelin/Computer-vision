@@ -307,3 +307,31 @@ whats going on: weight initialization(Xaview, Kaiming); regularization(dropout,m
 #### Self-attention
 add query matrix which multiply with input vector to compute query vector
 ![StdDraw](https://github.com/Sandyuelin/Computer-vision/blob/78c435d8bc60c80a36d299ffeb8f60bfd44e3890/cs231n/screenshots/Screenshot%202024-06-19%20180729.png)
+#### Transformer
+- a transformer is a sequence of transformer blocks(input: xs, outputs: ys)
+- self-attention is the only interaction between vectors
+- layer norm and MLP work independently per vector
+
+## Objection detection
+### Region-Based CNN/R-CNN
+   - input single RGB image
+   - run region proposal method to compute ~2000 region proposals
+   - resize each region to 224*224 and run independently through CNN to predict class scores and bbox
+   - use scores to select a subset of region proposals to output
+   - compare w/ ground-truth boxes
+    - comparing boxes: intersection over union (IoU) $\frac{area\space  of\space intersection}{area\space  of\space  union}$ 
+  
+### Fast R-CNN
+- run whole image through ConvNet
+- regions of interest(RoIs) from a proposal method
+- crop + resize features
+- per-regtion network
+- category and box transform per region
+  
+### Faster R-CNN: learnable region proposals
+- jointly train w/ 4 losses
+- RPN classification: anchor box is object
+- RPN regression: predict transform from anchor box to proposal box
+- object classification: classify proposals as background 
+- object regression: predict transform from proposal box to object box
+
