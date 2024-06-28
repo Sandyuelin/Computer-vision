@@ -307,10 +307,37 @@ whats going on: weight initialization(Xaview, Kaiming); regularization(dropout,m
 #### Self-attention
 add query matrix which multiply with input vector to compute query vector
 ![StdDraw](https://github.com/Sandyuelin/Computer-vision/blob/78c435d8bc60c80a36d299ffeb8f60bfd44e3890/cs231n/screenshots/Screenshot%202024-06-19%20180729.png)
-#### Transformer
-- a transformer is a sequence of transformer blocks(input: xs, outputs: ys)
+### Transformer
+- a transformer is a sequence of transformer blocks(input: Xs, outputs: Ys)
 - self-attention is the only interaction between vectors
 - layer norm and MLP work independently per vector
+
+#### Key Components of a Transformer
+
+##### Input Embeddings
+The input data is first converted into embeddings, which are continuous vector representations.
+
+#####  Positional Encodings
+Since the transformer does not inherently process data sequentially, positional encodings are added to the input embeddings to provide information about the position of each word in the sequence.
+
+##### Encoder
+The encoder is composed of a stack of identical layers (typically 6). Each layer has two main sub-layers:
+
+- **Multi-Head Self-Attention**: This mechanism allows the model to focus on different parts of the sequence simultaneously. It consists of multiple attention heads that learn different aspects of the data.
+- **Feed-Forward Neural Network**: A fully connected feed-forward network that processes the output of the attention mechanism.
+- Each sub-layer is followed by a residual connection and layer normalization.
+
+##### Decoder
+The decoder is also composed of a stack of identical layers (typically 6). Each layer in the decoder has three main sub-layers:
+
+- **Masked Multi-Head Self-Attention**: Similar to the encoder, but with a mask to prevent positions from attending to subsequent positions.
+- **Multi-Head Attention over Encoder Outputs**: This allows the decoder to attend to the encoder outputs.
+- **Feed-Forward Neural Network**: Similar to the encoder.
+- Each sub-layer is followed by a residual connection and layer normalization.
+
+##### Output Layer
+The decoder outputs are transformed through a linear layer and a softmax activation to produce the final probabilities for each output token.
+
 
 ## Objection detection
 ### Region-Based CNN/R-CNN
