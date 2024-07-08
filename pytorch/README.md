@@ -1,3 +1,5 @@
+## playground for pytorch 
+
 ### download Pytorch
 - download python, cuda 11.8
 - download pip in terminal ( **VPN is turned off** )
