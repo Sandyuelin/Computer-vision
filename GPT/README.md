@@ -56,5 +56,7 @@ wei = F.softmax(wei, dim=-1)
 v = value(x)
 out = wei @ v
 ```
-note1: nodes in a directed graph aggregating info w a weighted sum from all nodes that point to them,
+note: 
+- nodes in a directed graph aggregating info w a weighted sum from all nodes that point to them,
 with data-dependent weights
+- self in self attention because key, query and value come from x; cross attention may have other external sources of conditions or contexts on key and query
