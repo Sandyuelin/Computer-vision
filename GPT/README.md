@@ -60,3 +60,11 @@ note:
 - nodes in a directed graph aggregating info w a weighted sum from all nodes that point to them,
 with data-dependent weights
 - self in self attention because key, query and value come from x; cross attention may have other external sources of conditions or contexts on key and query
+
+## Tokenization
+- strings: immutable sequences of unicode code points  
+```python
+ord("h") # get unicode code point, not string
+[ord(x) for x in "hello world"]
+```
+
